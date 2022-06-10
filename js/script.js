@@ -1,39 +1,24 @@
-const flight = window.document.getElementById('flight-click')
-const hotel = window.document.getElementById('hotel-click')
-const rental = window.document.getElementById('rental-click')
-const card_main = window.document.querySelector('div.card-main')
+const flight = window.document.getElementById("flight-click");
+const hotel = window.document.getElementById("hotel-click");
+const rental = window.document.getElementById("rental-click");
+const card_main = window.document.querySelector("div.card-main");
 
-flight.addEventListener('click', click_flight)
-hotel.addEventListener('click', click_hotel)
-rental.addEventListener('click', click_rental)
+flight.addEventListener("click", click_flight);
+hotel.addEventListener("click", click_hotel);
+rental.addEventListener("click", click_rental);
 
 function click_flight() {
+  hotel.style.background = "black";
+  rental.style.background = "black";
+  flight.style.background = "rgb(254, 57, 57)";
+  card_main.style.opacity = "0";
 
+  setTimeout(wait, 130);
+  function wait() {
+    card_main.style.opacity = "1";
+  }
 
-
-
-    hotel.style.background = "black"
-    rental.style.background = "black"
-    flight.style.background = "rgb(254, 57, 57)"
-    card_main.style.opacity = "0"
-
-
-
-
-
-    setTimeout(wait, 130)
-    function wait() {
-        card_main.style.opacity = "1"
-
-
-
-
-    }
-
-
-
-
-    card_main.innerHTML = `
+  card_main.innerHTML = `
     <h1 id="title-main-form">Viage o mundo com a gente!</h1>
 
 
@@ -56,27 +41,21 @@ function click_flight() {
                         <button>Procure e ache datas</button>
 
                     </div>
-    `
-
-
+    `;
 }
 
 function click_hotel() {
+  flight.style.background = "black";
+  rental.style.background = "black";
+  hotel.style.background = "rgb(254, 57, 57)";
+  card_main.style.opacity = "0";
 
+  setTimeout(wait, 130);
+  function wait() {
+    card_main.style.opacity = "1";
+  }
 
-    flight.style.background = "black"
-    rental.style.background = "black"
-    hotel.style.background = "rgb(254, 57, 57)"
-    card_main.style.opacity = "0"
-
-    setTimeout(wait, 130)
-    function wait() {
-        card_main.style.opacity = "1"
-
-    }
-
-
-    card_main.innerHTML = `
+  card_main.innerHTML = `
 
     
                     <div class="card-main-hotel-title">
@@ -122,15 +101,61 @@ function click_hotel() {
 
                     
     
-    `
-
+    `;
 }
 
 function click_rental() {
+  flight.style.background = "black";
+  rental.style.background = "rgb(254, 57, 57)";
+  hotel.style.background = "black";
 
-    flight.style.background = "black"
-    rental.style.background = "rgb(254, 57, 57)"
-    hotel.style.background = "black"
+  card_main.style.opacity = "0";
 
+  setTimeout(wait, 130);
+  function wait() {
+    card_main.style.opacity = "1";
+  }
+
+  card_main.innerHTML = `
+
+    
+    <div class="card-main-rental-title">
+    <h1>
+        Alugueis disponíveis:
+    </h1>
+
+</div>
+
+<div class="card-main-rental-flex">
+    <div class="card-main-rental-box">
+        <div class="rental-card">
+            <img src="img/cinqueterre.jpg" alt="" width="150px" height="150px">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque tempore perspiciatis! Rem omnis ea molestias eligendi ut ab officia itaque velit nostrum vel temporibus, laudantium cupiditate deserunt doloremque labore.</p>
+            <a href="">Alugar</a>
+        </div>
+
+        <div class="rental-card">
+            <img src="img/cinqueterre.jpg" alt="" width="150px" height="150px">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis suscipit odio, officia corrupti itaque pariatur enim, sed eius maxime optio! Omnis unde eos a asperiores quia vel labore quas.</p>
+            <a href="">Alugar</a>
+        </div>
+
+    </div>
+
+    <div class="card-main-rental-box">
+        <div class="rental-card">
+            <img src="img/cinqueterre.jpg" alt="" width="150px" height="150px">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis suscipit odio, officia corrupti itaque pariatur enim, sed eius maxime optio! Omnis unde eos a asperiores quia vel labore quas.</p>
+            <a href="">Alugar</a>
+        </div>
+        <div class="rental-card">
+            <img src="img/cinqueterre.jpg" alt="" width="150px" height="150px">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis suscipit odio, officia corrupti itaque pariatur enim, sed eius maxime optio! Omnis unde eos a asperiores quia vel labore quas.</p>
+            <a href="">Alugar</a>
+        </div>
+        
+    </div>
+                    
+    
+    `;
 }
-
